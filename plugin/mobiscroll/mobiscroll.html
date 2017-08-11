@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>mobiscroll</title>
+  <link rel="stylesheet" href="./mobiscroll-2.13.2.full.min.css">
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+
+  <input type="text" id="date" readonly="readonly" name="appDate" placeholder="填写日期">
+
+  <select id="select">
+      <option disabled selected value=""></option>
+    <option value="test1">test1</option>
+    <option value="test2">test2</option>
+    <option value="test3">test3</option>
+  </select>
+
+
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js "></script>
+  <script src="./mobiscroll-2.13.2.full.min.js"></script>
+
+
+  <script>
+    //-----------声明-------------
+    var timeArr = [666, 777, 888, 999, 111];
+
+    //-----------绑定插件-------------
+    setData($('#date'))
+    setTime($('#select'))
+
+    // -----------function-------------
+    //设定日期设置
+    function setData(ele) {
+      ele.mobiscroll().date({
+        dateFormat: 'yyyy-mm-dd',
+        dateOrder: 'yymmdd',
+        theme: 'android-ics light',
+        display: 'modal',
+        mode: 'scroller',
+        setText: '确定',
+        cancelText: '取消',
+        headerText: function () {
+          return "开始日期"
+        },
+        lang: 'zh',
+        minDate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+        endYear: new Date().getFullYear(),
+        //选择完成以后的回调 valueText(str):选中的时间，inst（obj）：插件实例
+        onSelect: function (valueText, inst) {}
+      });
+    }
+
+
+    //设定单选设置
+    function setTime(ele) {
+      mbobj = ele.mobiscroll().select({
+        theme: 'android-ics light',
+        display: 'modal',
+        mode: 'scroller',
+        timeWheels: 'HHii',
+        lang: 'zh',
+        setText: '确定',
+        cancelText: '取消',
+        placeholder: '开始时间',
+        // inputClass: "select", //生成输入框的类名
+        // disabled: true,//是否启用
+
+        headerText: function () {
+          return "开始时间"
+        },
+        //设定反回调值，可以再这里做格式处理 index（arr）：只一个选择内容的数组
+        formatResult: function (index) {
+          return index[0]
+        },
+        onBeforeShow: function (inst) {},
+        onSelect: function (valueText, inst) {}
+      });
+    };
+
+    //向select注入选项
+    function addSelet() {
+      document.getElementById("select");
+      for (var y = 0; y < timeArr.length; y++) {
+        select.innerHTML += '<option >' + timeArr[y] + '</option>'
+      }
+    }
+  </script>
+</body>
+
+</html>
