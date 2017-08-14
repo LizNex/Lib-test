@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>common.js</title>
+  <link rel="stylesheet" href="./common.css">
+
+
+  <style>
+    .box {
+      margin: 10px;
+      position: relative;
+    }
+
+    #clickStyle {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+    }
+
+    .tab {
+      width: 100px;
+      height: 100px;
+      float: left;
+      border: 1px solid #000;
+    }
+
+    .on {
+      background-color: #000;
+    }
+
+    .off {
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <p>点击切换class</p>
+    <div id="clickStyle" data-toggle="false"></div>
+  </div>
+
+  <div class="box">
+    <p>点击tab切换</p>
+    <div class="tabBox clearfix">
+      <div class="tab"></div>
+      <div class="tab"></div>
+    </div>
+  </div>
+  <div class="box clearfix">
+    <p>loading</p>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="./common.js">
+  </script>
+
+  <script>
+    //点击切换class
+    document.getElementById("clickStyle").onclick = function () {
+      clickStyle(event, 'on');
+    }
+
+
+    //点击tab切换
+    var tab = document.getElementsByClassName('tab');
+    for (var i = 0; i < tab.length; i++) {
+      tab[i].onclick = function () {
+        tabStyle(event, 'tab', 'on')();
+      }
+    }
+  </script>
+</body>
+
+</html>

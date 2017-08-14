@@ -1,0 +1,343 @@
+.clearfix {
+  content: '';
+  display: block;
+  clear: both; }
+
+body {
+  background-color: #f3fafe;
+  max-width: 768px;
+  margin: 0 auto; }
+
+.tk-container {
+  margin: 0 auto;
+  width: 95%;
+  padding: 20px 0;
+  margin-bottom: 50px; }
+
+.tk-model {
+  width: 100%;
+  margin-bottom: 12px; }
+
+.tk-model-hd {
+  font-size: 15px;
+  margin-bottom: 13px; }
+
+.tk-model-hd-logo {
+  float: left;
+  height: 15px;
+  width: 5px;
+  background-color: #95d1ef;
+  border-radius: 20px; }
+
+.tk-model-h2 {
+  margin-left: 11px;
+  color: #6d6e70; }
+
+.tk-model-hr {
+  margin: 6px 0 0 0;
+  border-top: 1.5px solid #abaeb3; }
+
+.tk-model-mian {
+  border: 1px solid #d1d1d1;
+  position: relative;
+  font-size: 13px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 16px; }
+
+.tk-input-arrow {
+  background-image: url("../img/drop@2x.png");
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  position: absolute;
+  right: 2%;
+  top: 55%; }
+
+.tk-input-dropdown {
+  width: 100%;
+  min-width: 100px;
+  height: 150px;
+  overflow: scroll;
+  overflow-x: hidden; }
+
+.tk-input-dropdown-item {
+  font-size: 12px;
+  padding: 5px;
+  color: #214284;
+  letter-spacing: 1%; }
+
+.tk-btn-close {
+  float: left;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/close@2x.png");
+  background-size: contain;
+  position: absolute;
+  top: 47%;
+  right: -2%;
+  cursor: pointer; }
+
+.tk-btn-add {
+  width: 105px;
+  height: 37px;
+  background-color: #0076ba;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  float: right;
+  margin-right: 2%; }
+
+.tk-btn-save {
+  width: 105px;
+  height: 37px;
+  background-color: #0076ba;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  margin: 0 auto; }
+
+.tk-info-left {
+  float: left;
+  width: 43%;
+  border-bottom: 1px solid #95d1ef;
+  height: 24px;
+  margin-bottom: 17px; }
+
+.tk-info-right {
+  width: auto;
+  border-bottom: 1px solid #95d1ef;
+  height: 24px;
+  margin-bottom: 17px;
+  margin-left: 50%; }
+
+.tk-info-sl {
+  width: 43%;
+  border-bottom: 1px solid #95d1ef;
+  height: 24px;
+  margin-bottom: 17px; }
+
+.tk-info-all {
+  width: auto;
+  border-bottom: 1px solid #95d1ef;
+  height: 24px;
+  margin-bottom: 17px; }
+
+.tk-info-key {
+  float: left; }
+
+.tk-info-value {
+  float: right;
+  letter-spacing: 1px;
+  color: #062e79; }
+
+.tk-info-unit {
+  float: right;
+  margin-left: 5px; }
+
+.tk-tag {
+  margin: 0 auto 20px;
+  font-size: 0;
+  text-align: center; }
+
+.tk-tag-meeting {
+  display: inline-block;
+  width: 50%;
+  max-width: 200px;
+  position: relative;
+  color: #fff; }
+
+.tk-tag-speaker {
+  display: inline-block;
+  width: 50%;
+  max-width: 200px;
+  position: relative; }
+
+.tk-tag-bg {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.tk-tag-icon {
+  position: absolute;
+  width: 15px;
+  left: 25%;
+  top: 30%; }
+
+.tk-tag-h2 {
+  font-size: 13px;
+  position: absolute;
+  width: 74px;
+  left: 30%;
+  top: 32%; }
+
+.tk-meeting {
+  height: 50px;
+  padding: 8px 40px 8px 32px;
+  border: 1px solid #95d1ef;
+  border-radius: 5px;
+  position: relative;
+  letter-spacing: 1px;
+  margin-bottom: 15px; }
+
+@media (max-width: 320px) {
+  .tk-meeting {
+    letter-spacing: 1px;
+    padding: 8px 10px 8px 20px; } }
+
+.tk-meeting-tag {
+  width: 13px;
+  height: 19px;
+  position: absolute;
+  top: 0;
+  left: 2%; }
+
+.tk-meeting-date {
+  margin-bottom: 7px; }
+
+.tk-meeting-start {
+  float: left; }
+
+.tk-meeting-end {
+  float: right; }
+
+.tk-tips {
+  padding: 10px 8px 50px;
+  height: auto;
+  line-height: 1.5; }
+
+.tk-model-footer {
+  height: 28px;
+  background-color: #f7f7f7;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top: 1px solid #d1d1d1;
+  border-left: 1px solid #d1d1d1;
+  border-right: 1px solid #d1d1d1;
+  border-bottom: 1px solid #d1d1d1;
+  padding: 6px; }
+
+.tk-model-footer-icon {
+  background-image: url("../img/stata-pub.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  float: left; }
+
+.tk-model-footer-des {
+  line-height: 18px;
+  margin-left: 5px;
+  font-size: 12px; }
+
+.tk-speakerInfo {
+  border: 1px solid #95d1ef;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: relative;
+  font-size: 10px;
+  margin: 15px 0; }
+
+.tk-speakerInfo-nameBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35%; }
+  .tk-speakerInfo-nameBox i {
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-size: cover;
+    float: left;
+    background-image: url("../img/speaker.png"); }
+
+.tk-speakerInfo-name {
+  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 4px; }
+
+@media (max-width: 320px) {
+  .tk-speakerInfo-name {
+    margin-left: 5px; } }
+
+.tk-speakerInfo-hospital {
+  margin-left: 35%;
+  padding-left: 4%;
+  border-left: 1px solid #d1d1d1;
+  line-height: 1.5; }
+
+.tk-photo {
+  height: 135px;
+  position: relative;
+  margin: 10px auto; }
+
+#tk-photo-updata {
+  display: block;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  position: relative;
+  z-index: 1; }
+
+.tk-photo-show {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  z-index: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  border-radius: 5px; }
+
+.tk-photo-bg {
+  position: absolute;
+  /*background-image: url("../img/album.png");*/
+  /*background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;*/
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  height: 100%;
+  width: 60%; }
+.tk-input-dropdown-item:after {
+    display: block;
+    content: '';
+    height: 1px;
+    margin: 9px 0;
+    background-color: #e5e5e5;
+}
+
+
+.tk-agree {
+    color: #0076ba;
+}
+.tk-agree .tick {
+    width: 18px;
+    height: 18px;
+    margin: 8px 7px 8px 0;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    vertical-align:middle;
+}
+.tk-agree .un {
+    background-image: url("../img/tick-un.png");
+}
+
+.tk-agree .on {
+    background-image: url("../img/tick-on.png");
+}
+.tk-agree div {
+    line-height: 34px;
+    display:inline-block;
+}
+[v-cloak] {
+    display: none;
+}

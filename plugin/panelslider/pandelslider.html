@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+  <link href="./css/base.css" rel="stylesheet">
+  <link href="./css/common.css" rel="stylesheet">
+  <link href="./css/meeting-mian.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+
+
+
+  <div id="left-panel" class="panel">
+    <h2>请点击选择显示条件</h2>
+    <hr>
+    <ul class="filter-list">
+      <li class="item">
+        <div class="content " active="false" data-types="4">
+          <i class="icon noReply"></i>
+          <span>未批复</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content  " active="false" data-types="1">
+          <i class="icon uncommitted"></i>
+          <span>未提交</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="2">
+          <i class="icon helding"></i>
+          <span>正在召开</span>
+        </div>
+        <hr>
+      </li>
+
+      <li class="item">
+        <div class="content " active="false" data-types="3">
+          <i class="icon pending"></i>
+          <span>待召开</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="5">
+          <i class="icon grab"></i>
+          <span>可抢单</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="6">
+          <i class="icon choose"></i>
+          <span>选择讲者</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="7">
+          <i class="icon complete"></i>
+          <span>已完成</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="8">
+          <i class="icon uncomplete"></i>
+          <span>未完成</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="10">
+          <i class="icon close"></i>
+          <span>已关闭</span>
+        </div>
+        <hr>
+      </li>
+      <li class="item">
+        <div class="content " active="false" data-types="9">
+          <i class="icon cancel"></i>
+          <span>已取消</span>
+        </div>
+        <hr>
+      </li>
+
+    </ul>
+  </div>
+
+
+
+  <nav class="nav-bar">
+    <div class="center ">
+      <a id="left-panel-link" href="#left-panel">
+          test
+      </a>
+      <span class="setting">设置显示</span>
+
+    </div>
+  </nav>
+
+
+  <script src="http://www.lanrenzhijia.com/ajaxjs/1.10.2/jquery-1.10.2.min.js"></script>
+  <script src="./js/jquery.panelslider.min.js"></script>
+  <script>
+    $('#left-panel-link').panelslider({
+      side: 'left',
+      clickClose: true,
+      duration: 200
+    });
+  </script>
+</body>
+
+
+
+</html>
