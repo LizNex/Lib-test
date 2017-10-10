@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./dist/zoomify.min.css">
+  <style>
+    img {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn">点击</button>
+  <img src="./test.png" id="img">
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <script src="./dist/zoomify.min.js"></script>
+  <script>
+    $('img').zoomify();
+    $("#btn").click(function () {
+      $("#img").css("display", "block");
+      $('img').zoomify('zoomIn');
+    })
+
+    $("img").on('zoom-out-complete.zoomify', function () {
+      st = setTimeout(function () {
+        $("#img").css("display", "none");
+        clearTimeout(this)
+      }, 50)
+
+
+
+    })
+  </script>
+</body>
+
+</html>

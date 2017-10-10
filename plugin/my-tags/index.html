@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    .tags {
+      float: left;
+      height: 20px;
+      background-color: #156;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .wrapper {
+      width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <input id="test" type="text">
+  </div>
+
+
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- <script src="./my-tags.js"></script> -->
+  <script>
+    // $("#test").keypress(function (event) {
+    //   console.log(event.keyCode)
+    //   if (event.keyCode == 44) {
+  
+    //     var tag = $('<span class="tags">111</span>')
+    //     $(this).after(tag);
+    //   }
+    // })
+
+    $("#test").keydown(function (event) {
+      if (event.keyCode == 188||event.keyCode==229) {
+        var val=$(this).val();
+        val=val.substring(0,val.length-1);
+        console.log(val);
+        var tag = $('<span class="tags">'+val+'</span>')
+        $(this).after(tag);
+        $(this).val("");
+      }
+    })
+
+
+  </script>
+
+</body>
+
+</html>

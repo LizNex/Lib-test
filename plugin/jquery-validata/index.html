@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input {
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <form id="form" action="">
+    <input type="text" id="test1" required>
+    <input type="text" id="test2" required>
+    <button id="submit">提交</button>
+
+
+  </form>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./validata/dist/jquery.validate.js"></script>
+
+
+  <script>
+    // (function ($) {
+    //   if (!$.validator) {
+    //     return;
+    //   }
+
+    //   $.validator.setDefaults({
+    //     errorElement: 'span',
+    //     errorClass: 'help-block help-block-validation-error',
+    //     focusInvalid: false,
+    //     submitOnKeyPress: true,
+    //     highlight: function (element) {
+    //       $(element).closest('.form-group').addClass('has-error');
+    //     },
+
+    //     unhighlight: function (element) {
+    //       $(element).closest('.form-group').removeClass('has-error');
+    //     },
+
+    //     errorPlacement: function (error, element) {
+    //       if (element.closest('.input-icon').size() === 1) {
+    //         error.insertAfter(element.closest('.input-icon'));
+    //       } else {
+    //         error.insertAfter(element);
+    //       }
+    //     },
+
+    //     success: function (label) {
+    //       label.closest('.form-group').removeClass('has-error');
+    //       label.remove();
+    //     },
+
+    //     submitHandler: function (form) {
+    //       $(form).find('.alert-danger').hide();
+    //     }
+    //   });
+    // })(jQuery);
+  </script>
+  <script>
+    $("#submit").click(function () {
+      $("#form").validate();
+    })
+  </script>
+</body>
+
+</html>
