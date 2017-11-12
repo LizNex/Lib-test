@@ -1,20 +1,48 @@
-﻿//--------依赖jquery----------
+﻿//2017-11-12 
+// updata：
+//*重新分类代码：js部分，html部分，jquery依赖部分
+//*新增格式化日期
 
-//--------工具类---------------
+//--------------------------js部分----------------------------------
+// 类数组转化为数组
+// likeArray(类数组)
+function likeToArray(likeArray) {
+    return Array.prototype.slice.call(likeArray, 0);
+}
+
+//t(datetime):时间格式的对象
+//str(string):指定格式
+//eg:formatDate(new Date(1409894060000), 'yyyy-MM-dd HH:mm:ss 星期w')
+function formatDate(t, str) {
+	var obj = {
+	yyyy: t.getFullYear(),
+	yy: ("" + t.getFullYear()).slice(-2),
+	M: t.getMonth() + 1,
+	MM: ("0" + (t.getMonth() + 1)).slice(-2),
+	d: t.getDate(),
+	dd: ("0" + t.getDate()).slice(-2),
+	H: t.getHours(),
+	HH: ("0" + t.getHours()).slice(-2),
+	h: t.getHours() % 12,
+	hh: ("0" + t.getHours() % 12).slice(-2),
+	m: t.getMinutes(),
+	mm: ("0" + t.getMinutes()).slice(-2),
+	s: t.getSeconds(),
+	ss: ("0" + t.getSeconds()).slice(-2),
+	w: ['日', '一', '二', '三', '四', '五', '六'][t.getDay()]
+            };
+	return str.replace(/([a-z]+)/ig, function($1) {
+		return obj[$1]
+	});
+}
+
+//--------------------------html相关部分---------------------------
 //获得对象是页面中相同类名的第几个对象
 //obj（obj）：对象  className（str）：类名
 function getClassIndex(obj, className) {
     var group = document.getElementsByClassName(className);
     var arr = Array.prototype.slice.call(group, 0);
     return arr.indexOf(obj)
-}
-
-
-
-// 类数组转化为数组
-// likeArray(类数组)
-function likeToArray(likeArray) {
-    return Array.prototype.slice.call(likeArray, 0);
 }
 
 // 重写alert方法，让苹果手机不出现地址
@@ -38,56 +66,6 @@ window.confirm = function (message) {
     iframe.parentNode.removeChild(iframe);
     return result;
 };
-
-// 显示loadingF
-function showLoad() {
-    $('.loading').css('display', 'block');
-}
-// 关闭loading
-function closeLoad() {
-
-    $('.loading').css('display', 'none');
-
-}
-
-
-
-//--------业务类---------------
-//格式化日期  
-// str（str）:日期  format(str):格式 例'yyyy/mm/dd'
-function formatDate(str, format) {
-    var date = new Date(str.replace(/(-0|-)/g, '/'))
-    var obj = {
-        yyyy: date.getFullYear(),
-        mm: ("0" + (date.getMonth() + 1)).slice(-2),
-        dd: ("0" + date.getDate()).slice(-2),
-    };
-    return format.replace(/([a-z]+)/ig, function ($1) {
-        return obj[$1]
-    });
-}
-
-//格式化时间将ele的时间starttime endtime转化为startDate time,转化的结果封装成对象返回
-//ele(obj):带有starttime endtime的对象
-//返回（obj）：带有带有starttime time的对象
-function translateTime(ele) {
-    var startArr = ele.starttime.split('T');
-    var endArr = ele.endtime.split('T');
-    ele.startDate = startArr[0];
-    ele.startDate = ele.startDate.replace(/-/g, '/')
-    ele.time = startArr[1].replace(/:\d{2}$/, '') + '~' + endArr[1].replace(/:\d{2}$/, '');
-    return {
-        startDate: ele.startDate,
-        time: ele.time
-    }
-
-}
-
-//格式化时间  hh小时 mm分钟  返回xx:xx
-//返回（str）：例：18:00
-function format(hh, mm) {
-    return hh + ':' + mm;
-}
 
 
 //跳转到url    
@@ -113,7 +91,7 @@ function skipData(event, url) {
     window.location.href = url;
 }
 
-//获取与name匹配的值
+//获取与url中与name匹配的值
 //name(str):值的名字
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -122,6 +100,9 @@ function GetQueryString(name) {
     return null;
 }
 
+
+
+///---------------------------------jquery部分----------------------------
 //绑定单个input，限制输入数字
 //input（obj）：需要限制的input元素
 function numOnly(input) {
